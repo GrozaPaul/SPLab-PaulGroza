@@ -1,8 +1,6 @@
 package org.example.lab_1;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
@@ -12,14 +10,35 @@ import java.util.List;
 public class Book {
     private String title;
     private List<Author> authorList;
-    private TableOfContents tableOfContents;
-    private List<Chapter> chapterList;
+    private List<Element> elements;
 
-    public Book(String title, List<Author> authorList, List<Chapter> chapterList, TableOfContents tableOfContents) {
+    public Book(String title, List<Author> authorList, List<Element> elements) {
         this.title  = title;
         this.authorList = authorList;
-        this.chapterList = new ArrayList<>(chapterList);
-        this.tableOfContents = tableOfContents;
+        this.elements = new ArrayList<>(elements);
+    }
+
+    public Book(String title){
+        this.title = title;
+        this.authorList = new ArrayList<>();
+        this.elements = new ArrayList<>();
+    }
+
+    public void add(Element element) {
+        if (elements == null) elements = new ArrayList<>();
+        elements.add(element);
+    }
+
+    public void addAuthor(Author author){
+        if(authorList == null) this.authorList = new ArrayList<>();
+        authorList.add(author);
+    }
+
+    public void print() {
+        System.out.println("Book title: " + title);
+        for(Author author: authorList) author.print();
+        for(Element e: elements) e.print();
+
     }
 
 }

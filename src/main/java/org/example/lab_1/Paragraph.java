@@ -10,6 +10,21 @@ public class Paragraph implements Element {
 
     @Override
     public void print() {
-        System.out.println("Paragraph: " + text);
+        System.out.println("Paragraph: " + text);;
+    }
+
+    @Override
+    public void add(Element element) {
+        throw new UnsupportedOperationException("Unsupported Operation on " + this.getClass());
+    }
+
+    @Override
+    public void remove(Element element) {
+        throw new UnsupportedOperationException("Unsupported Operation on " + this.getClass());
+    }
+
+    @Override
+    public Element getElement(int index) {
+        throw new UnsupportedOperationException("Unsupported Operation on " + this.getClass());
     }
 }
