@@ -5,6 +5,11 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Image {
+public class Image implements Element {
     private String imageName;
+
+    @Override
+    public void print(){
+        System.out.println("Image: " + imageName);
+    }
 }

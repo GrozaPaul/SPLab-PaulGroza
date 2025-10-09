@@ -11,24 +11,15 @@ public class Lab1Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Lab1Application.class, args);
 
-        Image img1 = new Image("imageName1");
-        Image img2 = new Image("imageName2");
+        SubChapter subCh1 = new SubChapter("Chapter I");
+        subCh1.addElement(new Paragraph("Para1"));
+        subCh1.addElement(new Image("img1"));
+        subCh1.addElement(new Table("Table1"));
 
-        Paragraph par1 = new Paragraph("Paragraph text 1");
-        Paragraph par2 = new Paragraph("Paragraph text 2");
-
-        Table table1 = new Table("Table title 1");
-        Table table2 = new Table("Table title 2");
-
-        SubChapter subCh1 = new SubChapter("Subchapter1",
-                List.of(img1, img2),
-                List.of(par1, par2),
-                List.of(table1, table2));
-
-        SubChapter subCh2 = new SubChapter("Subchapter2",
-                List.of(img1, img2),
-                List.of(par1, par2),
-                List.of(table1, table2));
+        SubChapter subCh2 = new SubChapter("Chapter II");
+        subCh1.addElement(new Paragraph("Para2"));
+        subCh1.addElement(new Image("img2"));
+        subCh1.addElement(new Table("Table2"));
 
         Chapter chapter1 = new Chapter("Chapter1", List.of(subCh1, subCh2));
         Chapter chapter2 = new Chapter("Chapter2", List.of(subCh1, subCh2));
@@ -39,5 +30,4 @@ public class Lab1Application {
                 new TableOfContents());
         System.out.println(book1);
     }
-
 }

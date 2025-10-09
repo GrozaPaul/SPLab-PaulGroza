@@ -9,14 +9,14 @@ import java.util.List;
 @Data
 public class SubChapter {
     private String name;
-    private List<Image> imageList;
-    private List<Paragraph> paragraphList;
-    private List<Table> tableList;
+    private List<Element> elements;
 
-    public SubChapter (String name, List<Image> imageList, List<Paragraph> paragraphList, List<Table> tableList) {
+    public SubChapter (String name) {
         this.name = name;
-        this.imageList = new ArrayList<>(imageList);
-        this.paragraphList = new ArrayList<>(paragraphList);
-        this.tableList = new ArrayList<>(tableList);
+        this.elements = new ArrayList<>();
+    }
+
+    public void addElement(Element element) {
+        elements.add(element);
     }
 }
