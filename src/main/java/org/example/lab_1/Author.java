@@ -9,4 +9,8 @@ public class Author {
     public Author(String name){
         this.name = name;
     }
+
+    public void print() {
+        System.out.println("Authors:\nAuthor: " + this.name);
+    }
 }
