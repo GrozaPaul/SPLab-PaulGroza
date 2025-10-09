@@ -5,6 +5,11 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Table {
+public class Table implements Element{
     private String title;
+
+    @Override
+    public void print() {
+        System.out.println("Table: " + title);
+    }
 }

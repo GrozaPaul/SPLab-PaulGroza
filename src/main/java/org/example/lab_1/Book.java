@@ -21,4 +21,5 @@ public class Book {
         this.chapterList = new ArrayList<>(chapterList);
         this.tableOfContents = tableOfContents;
     }
+
 }
