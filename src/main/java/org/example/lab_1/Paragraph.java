@@ -7,10 +7,28 @@ import lombok.Data;
 @AllArgsConstructor
 public class Paragraph implements Element {
     private String text;
+    private AlignStrategy strategy;
+
+    public Paragraph(String text) {
+        this.text = text;
+        this.strategy = new AlignLeft();
+    }
+
+    public Paragraph(AlignStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void setAlignStrategy(AlignStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void executeStrategy(AlignStrategy strategy) {
+        strategy.print(this.getText());
+    }
 
     @Override
     public void print() {
-        System.out.println("Paragraph: " + text);;
+        System.out.println("Paragraph: " + text);
     }
 
     @Override
