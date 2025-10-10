@@ -21,7 +21,8 @@ public class Section implements Element{
     public void print() {
         System.out.println(this.title);
         for(Element e: elements) {
-            e.print();
+            if(e instanceof Paragraph) ((Paragraph) e).executeStrategy(((Paragraph) e).getStrategy());
+            else e.print();
         }
     }
 
