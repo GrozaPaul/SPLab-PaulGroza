@@ -1,4 +1,4 @@
-package org.example.lab_1;
+package org.example.lab_1.book_elements;
 
 import lombok.NoArgsConstructor;
 

@@ -1,8 +1,7 @@
-package org.example.lab_1;
+package org.example.lab_1.book_elements;
 
 import lombok.Data;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 

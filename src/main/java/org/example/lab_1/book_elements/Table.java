@@ -1,16 +1,16 @@
-package org.example.lab_1;
+package org.example.lab_1.book_elements;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Image implements Element {
-    private String imageName;
+public class Table implements Element{
+    private String title;
 
     @Override
-    public void print(){
-        System.out.println("Image: " + imageName);;
+    public void print() {
+        System.out.println("Table: " + title);;
     }
 
     @Override

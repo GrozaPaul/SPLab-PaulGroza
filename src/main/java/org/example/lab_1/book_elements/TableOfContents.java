@@ -1,17 +1,14 @@
-package org.example.lab_1;
+package org.example.lab_1.book_elements;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Data
-@AllArgsConstructor
-public class Table implements Element{
-    private String title;
+public class TableOfContents implements Element {
 
     @Override
-    public void print() {
-        System.out.println("Table: " + title);;
-    }
+    public void print() {}
 
     @Override
     public void add(Element element) {
